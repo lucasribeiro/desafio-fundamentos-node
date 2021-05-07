@@ -18,7 +18,6 @@ class CreateTransactionService {
         
     if (type === 'outcome'){      
       const balance = this.transactionsRepository.getBalance();
-      console.log(balance.income);
       const total = balance.outcome + value;
       if (total > balance.income) {
         throw Error('Valor não disponivel');
